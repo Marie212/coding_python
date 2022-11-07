@@ -17,4 +17,29 @@ def contras():
         passw6 = passw6 + passw5  
     codigo = passw6 + passw4
     return codigo
-print(contras())
+
+def menus():
+    print("MENU\n1. Generar codigo\n2. obtener codigo\n3. salir")
+    opc = input("Ingrese una opcion: ")
+    return opc
+cuentas = []
+while True:
+    opcion = menus()
+    if opcion == "1":
+        cuenta = input("ingrese la cuenta para la cual quiere generar codigo: ")
+        x = cuenta
+        y = contras()
+        dic = {
+            'cuen': x,
+            'contras': y
+        }
+        cuentas.append({'cuent': x, 'contras': y})
+        print(cuentas)
+    if opcion == "2":
+            print(cuentas)
+            for c in cuentas:
+                buscar = input("ingrese la cuenta de la cual quiere ver la contraseña: ")
+                if buscar == c['cuent']:
+                    print('tu password de ' + buscar + ' es: ', c['contras'])
+    if opcion == "3":
+        break
