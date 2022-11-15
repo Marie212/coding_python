@@ -43,3 +43,8 @@ while True:
                     print('tu password de ' + buscar + ' es: ', c['contras'])
     if opcion == "3":
         break
+
+with open(FILE_NAME, 'a') as file:
+        file.writelines("%s\n" %line for line in FILE_NAME)
+        file.write(str(cuentas))
+        file.close()
